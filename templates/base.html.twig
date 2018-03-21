@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('/build/css/app.css') }}" rel="stylesheet" />
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('/build/js/app.js') }}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block header %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    Header
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        {% block body %}Base Template{% endblock %}
+
+        <footer>
+            {% block footer %}
+                <div class="container">
+                    <div class="panel-footer">
+                        <p class="text-muted">Posted by: Someone</p>
+                        <p class="text-muted">Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+                    </div>
+                </div>
+            {% endblock %}
+        </footer>
+    </body>
+</html>
